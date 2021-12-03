@@ -1,0 +1,13 @@
+﻿@model BlogDoMike.Models.Post
+@{
+   
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Random</h2>
+<h2>@ViewBag.Post.Title</h2>
+<h4>Data de Criação: @ViewBag.Post.DateCreated</h4>
+<h3>@ViewBag.Post.Body</h3>
+
+

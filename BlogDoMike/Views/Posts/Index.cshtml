@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BlogDoMike.Models.Post>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Post do Blog</h2>
+@Html.ActionLink("Novo Post", "NewPost", "Posts", null, new { @class = "btn btn-primary" })
+<br />
+<br />
+@if (!Model.Any())
+{
+    <p> Ainda não temos nenhuma postagem no nosso Blog! =/ </p>
+}
+else
+{
+<table id="posts" class="table table-bordered table-hover">
+
+    @foreach (var post in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(post.Title, "Details", "Posts", new { id = post.Id }, null)
+            </td>
+            <td>
+                @post.DateCreated
+            </td>
+            <td>
+                @post.Body
+            </td>
+        </tr>
+    }
+</table>
+    
+}
